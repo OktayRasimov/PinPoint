@@ -1,17 +1,19 @@
 import styled from "styled-components";
-import logo from "../Images/pinpointlogoBG.png";
+import logo from "../Images/pinpointlogo.png";
 import { Link } from "react-router-dom";
 
 const LogoImg = styled.img`
-  height: 80px;
+  height: 60px;
   width: auto;
-  color: var(--color-green-100);
+
+  background-color: var(--color-green-100);
+  padding: 0.8rem;
   border-radius: 50%;
 `;
 
 function Logo() {
   return (
-    <Link path="/">
+    <Link to="/">
       <LogoImg src={logo} />
     </Link>
   );

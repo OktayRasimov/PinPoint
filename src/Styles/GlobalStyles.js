@@ -2,7 +2,12 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 :root {
---color-green-100:#39F088
+  //for backgrounds
+  --color-grey-100:#2a2d30;
+  //main light color
+  --color-green-100:#39F088;
+  //white
+  --color-white-100:#F2F7FF;
 }
 
 
@@ -21,13 +26,16 @@ html {
 }
 
 body {
-  
-  font-family: "Manrope", sans-serif;
+  /* font-family: 'Geologica', sans-serif; */
+/* font-family: 'Nunito Sans', sans-serif; */
+font-family: 'Rajdhani', sans-serif;
+  /* font-family: "Manrope", sans-serif; */
   line-height: 1.6;
   transition: color 0.3s, background-color 0.3s;
   min-height: 100vh;
   font-weight: 400;
   font-size: 1.6rem;
+  overflow: hidden;
 }
 
 

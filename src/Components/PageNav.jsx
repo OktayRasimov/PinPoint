@@ -13,12 +13,19 @@ const PageNavUl = styled.ul`
   list-style-type: none;
 
   li {
-    color: #fff;
+    color: var(--color-white-100);
   }
 `;
 
 const LogoContainer = styled.div`
   display: flex;
+  gap: 1.4rem;
+
+  h2 {
+    font-size: 3rem;
+    padding-top: 0.6rem;
+    color: var(--color-white-100);
+  }
 `;
 
 function PageNav() {

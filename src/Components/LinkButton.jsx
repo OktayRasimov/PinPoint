@@ -5,7 +5,7 @@ const StyledLink = styled(Link)`
   background-color: var(--color-green-100);
   border-radius: 10px;
   margin-top: 3rem;
-  color: #fff;
+  color: var(--color-white-100);
   text-decoration: none;
   display: flex;
   align-items: center;

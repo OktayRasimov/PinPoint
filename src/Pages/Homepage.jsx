@@ -15,9 +15,9 @@ const MainHomePageContainer = styled.main`
   background-size: cover;
   background-position: center;
   padding: 2.5rem 5rem;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; */
 `;
 
 function Homepage() {
