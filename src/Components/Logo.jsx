@@ -11,10 +11,24 @@ const LogoImg = styled.img`
   border-radius: 50%;
 `;
 
+const LogoContainer = styled.div`
+  display: flex;
+  gap: 1.4rem;
+
+  h2 {
+    font-size: 3rem;
+    padding-top: 0.6rem;
+    color: var(--color-white-100);
+  }
+`;
+
 function Logo() {
   return (
     <Link to="/">
-      <LogoImg src={logo} />
+      <LogoContainer>
+        <LogoImg src={logo} />
+        <h2>PinPoint</h2>
+      </LogoContainer>
     </Link>
   );
 }

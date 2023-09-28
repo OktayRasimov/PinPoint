@@ -4,6 +4,7 @@ const GlobalStyle = createGlobalStyle`
 :root {
   //for backgrounds
   --color-grey-100:#2a2d30;
+  --color-grey-200:#323232;
   //main light color
   --color-green-100:#39F088;
   //white
@@ -17,19 +18,21 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Geologica', sans-serif;
 }
-
 
 
 html {
   font-size: 62.5%;
 }
 
+a:link,a:visited{
+  color: var(--color-white-100);
+  text-decoration: none;
+}
+
 body {
-  /* font-family: 'Geologica', sans-serif; */
-/* font-family: 'Nunito Sans', sans-serif; */
-font-family: 'Rajdhani', sans-serif;
-  /* font-family: "Manrope", sans-serif; */
+  
   line-height: 1.6;
   transition: color 0.3s, background-color 0.3s;
   min-height: 100vh;

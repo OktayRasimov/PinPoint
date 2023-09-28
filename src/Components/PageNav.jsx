@@ -5,11 +5,12 @@ import styled from "styled-components";
 const PageNavContainer = styled.nav`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 const PageNavUl = styled.ul`
   display: flex;
-  gap: 4rem;
+  gap: 3.6rem;
   list-style-type: none;
 
   li {
@@ -17,34 +18,31 @@ const PageNavUl = styled.ul`
   }
 `;
 
-const LogoContainer = styled.div`
-  display: flex;
-  gap: 1.4rem;
+const PageNavStyledLink = styled(NavLink)`
+  font-size: 2.4rem;
+  padding: 1rem 2rem;
+  &.active {
+    /* padding: 1rem 2rem; */
 
-  h2 {
-    font-size: 3rem;
-    padding-top: 0.6rem;
-    color: var(--color-white-100);
+    border-radius: 10px;
+    background-color: var(--color-green-100);
   }
 `;
 
 function PageNav() {
   return (
     <PageNavContainer>
-      <LogoContainer>
-        <Logo />
-        <h2>PinPoint</h2>
-      </LogoContainer>
+      <Logo />
 
       <PageNavUl>
         <li>
-          <NavLink to="/pricing">Pricing</NavLink>
+          <PageNavStyledLink to="/pricing">Pricing</PageNavStyledLink>
         </li>
         <li>
-          <NavLink to="/product">Product</NavLink>
+          <PageNavStyledLink to="/product">Product</PageNavStyledLink>
         </li>
         <li>
-          <NavLink to="/login">Login</NavLink>
+          <PageNavStyledLink to="/login">Login</PageNavStyledLink>
         </li>
       </PageNavUl>
     </PageNavContainer>

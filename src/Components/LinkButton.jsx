@@ -16,7 +16,7 @@ const StyledLink = styled(Link)`
 `;
 
 function LinkButton() {
-  return <StyledLink to="dwadsa">Start Tracking</StyledLink>;
+  return <StyledLink to="app">Start Tracking</StyledLink>;
 }
 
 export default LinkButton;
