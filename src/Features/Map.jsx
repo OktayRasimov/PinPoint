@@ -9,9 +9,11 @@ import {
   useMapEvents,
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import { useEffect, useState } from "react";
+
 import { useNavigate } from "react-router";
 import { useGetUrlPosition } from "../Data/useGetUrlPosition";
+import { useQuery } from "@tanstack/react-query";
+import { getCityData } from "../Data/useGetCityData";
 
 const MapContainerDiv = styled(MapContainer)`
   background-color: inherit;
@@ -21,9 +23,9 @@ const MapContainerDiv = styled(MapContainer)`
 
 function MapClick() {
   const navigate = useNavigate();
+
   const map = useMapEvent({
     click: (e) => {
-      console.log(e);
       navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`);
       map.setView(e.latlng);
     },
@@ -33,19 +35,16 @@ function MapClick() {
 function Map() {
   const [lat, lng] = useGetUrlPosition();
 
-  useEffect(
-    function () {
-      async function getCity() {
-        const res = await fetch(
-          `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}`
-        );
-        const data = await res.json();
-        console.log(data);
-      }
-      getCity();
-    },
-    [lat, lng]
-  );
+  const {
+    data: cityData,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["CityData", lat],
+    queryFn: () => getCityData(lat, lng),
+  });
+
+  console.log(cityData);
 
   return (
     <MapContainerDiv center={[42.14, 24.78]} zoom={9} scrollWheelZoom={true}>
