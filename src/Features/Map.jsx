@@ -14,6 +14,9 @@ import { useNavigate } from "react-router";
 import { useGetUrlPosition } from "../Data/useGetUrlPosition";
 import { useQuery } from "@tanstack/react-query";
 import { getCityData } from "../Data/useGetCityData";
+import { addSelectedCityData } from "./cityDataSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const MapContainerDiv = styled(MapContainer)`
   background-color: inherit;
@@ -21,30 +24,34 @@ const MapContainerDiv = styled(MapContainer)`
   height: 100%;
 `;
 
-function MapClick() {
-  const navigate = useNavigate();
-
-  const map = useMapEvent({
-    click: (e) => {
-      navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`);
-      map.setView(e.latlng);
-    },
-  });
-}
-
 function Map() {
   const [lat, lng] = useGetUrlPosition();
+  const { selectedCityData } = useSelector((state) => state.cityData);
+  const dispatch = useDispatch();
 
-  const {
-    data: cityData,
-    isLoading,
-    error,
-  } = useQuery({
+  const { data, isLoading, error } = useQuery({
     queryKey: ["CityData", lat],
     queryFn: () => getCityData(lat, lng),
+    onError: (e) => console.log(e.message),
   });
 
-  console.log(cityData);
+  // data && dispatch(addSelectedCityData(data));
+  useEffect(
+    function () {
+      if (data) {
+        const { city, countryCode, longitude, latitude } = data;
+        const finalSelectedCityData = {
+          message: "",
+          city,
+          countryCode,
+          longitude,
+          latitude,
+        };
+        dispatch(addSelectedCityData(finalSelectedCityData));
+      }
+    },
+    [data, dispatch]
+  );
 
   return (
     <MapContainerDiv center={[42.14, 24.78]} zoom={9} scrollWheelZoom={true}>
@@ -62,4 +69,14 @@ function Map() {
   );
 }
 
+function MapClick() {
+  const navigate = useNavigate();
+
+  const map = useMapEvent({
+    click: (e) => {
+      navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`);
+      map.setView(e.latlng);
+    },
+  });
+}
 export default Map;

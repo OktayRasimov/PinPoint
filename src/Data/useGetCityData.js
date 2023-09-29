@@ -23,5 +23,7 @@ export async function getCityData(lat, lng) {
 
   const data = res.json();
 
+  if (!data) throw new Error(`No Country Found`);
+
   return data;
 }

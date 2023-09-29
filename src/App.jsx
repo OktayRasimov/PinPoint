@@ -13,6 +13,8 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
+import { Provider } from "react-redux";
+import { store } from "./store";
 
 const Homepage = lazy(() => import("./Pages/Homepage"));
 const Pricing = lazy(() => import("./Pages/Pricing"));
@@ -25,24 +27,26 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <Suspense fallback={<FullPageSpinner />}>
-          <Routes>
-            <Route index path="/" element={<Homepage />} />
-            <Route path="pricing" element={<Pricing />} />
-            <Route path="product" element={<Product />} />
-            <Route path="login" element={<Login />} />
-            <Route path="app" element={<AppLayout />}>
-              <Route index element={<Navigate replace to="cities" />} />
-              <Route path="cities" element={<CitiesBox />} />
-              {/* <Route path="cities/id" element={<CitiesBox />} /> */}
-              <Route path="form" element={<Form />} />
-              <Route path="countries" element={<CountriesBox />} />
-            </Route>
-            <Route path="*" element={<PageNotFound />} />
-          </Routes>
-        </Suspense>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Suspense fallback={<FullPageSpinner />}>
+            <Routes>
+              <Route index path="/" element={<Homepage />} />
+              <Route path="pricing" element={<Pricing />} />
+              <Route path="product" element={<Product />} />
+              <Route path="login" element={<Login />} />
+              <Route path="app" element={<AppLayout />}>
+                <Route index element={<Navigate replace to="cities" />} />
+                <Route path="cities" element={<CitiesBox />} />
+                {/* <Route path="cities/id" element={<CitiesBox />} /> */}
+                <Route path="form" element={<Form />} />
+                <Route path="countries" element={<CountriesBox />} />
+              </Route>
+              <Route path="*" element={<PageNotFound />} />
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+      </Provider>
     </QueryClientProvider>
   );
 }
