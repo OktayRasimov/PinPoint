@@ -32,7 +32,7 @@ a:link,a:visited{
 }
 
 body {
-  
+
   line-height: 1.6;
   transition: color 0.3s, background-color 0.3s;
   min-height: 100vh;
