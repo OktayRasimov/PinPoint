@@ -10,3 +10,18 @@ export async function useGetAddedCitiesData() {
 
   return data;
 }
+
+export async function addCitiesData(city) {
+  const { data, error } = await supabase
+    .from("addedCities")
+    .insert([city])
+    .select();
+
+  if (error) {
+    console.log(error);
+
+    throw new Error(`City could no be added`);
+  }
+
+  return data;
+}

@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import { useGetAddedCitiesData } from "../Data/useAddedCitiesData";
-import { useQuery } from "@tanstack/react-query";
+import CitiesEach from "./CitiesEach";
+import FullPageSpinner from "./FullPageSpinner";
 
 import { supabase } from "../Data/supabaseClient";
 import { useEffect } from "react";
-import FullPageSpinner from "./FullPageSpinner";
-import CitiesEach from "./CitiesEach";
+import { GetCities } from "../Data/useFetchAddedCities";
 
 const CitiesContainer = styled.div`
   width: 100%;
@@ -13,14 +12,14 @@ const CitiesContainer = styled.div`
 `;
 
 function CitiesBox() {
-  const {
-    isLoading,
-    data: cities,
-    error,
-  } = useQuery({
-    queryKey: ["cities"],
-    queryFn: useGetAddedCitiesData,
-  });
+  const { cities, isLoading } = GetCities();
+
+  useEffect(
+    function () {
+      console.log(cities);
+    },
+    [cities]
+  );
 
   return (
     <CitiesContainer>

@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+import { AddCity } from "../Data/useSubmitCityData";
 
 const StyledForm = styled.form`
   display: flex;
@@ -9,10 +10,11 @@ const StyledForm = styled.form`
 
 function Form() {
   const test = useSelector((state) => state.cityData.selectedCityData);
+  const { addCityData } = AddCity();
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(`TTTTTTTT`);
+    addCityData(test);
     console.log(test);
   }
 

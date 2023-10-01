@@ -13,7 +13,7 @@ import "leaflet/dist/leaflet.css";
 import { useNavigate } from "react-router";
 import { useGetUrlPosition } from "../Data/useGetUrlPosition";
 import { useQuery } from "@tanstack/react-query";
-import { getCityData } from "../Data/useGetCityData";
+import { getCityData } from "../Data/apiGetCityData";
 import { addSelectedCityData } from "./cityDataSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
