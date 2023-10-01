@@ -13,6 +13,7 @@ function Form() {
   function handleSubmit(e) {
     e.preventDefault();
     console.log(`TTTTTTTT`);
+    console.log(test);
   }
 
   return (

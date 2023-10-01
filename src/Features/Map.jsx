@@ -26,7 +26,6 @@ const MapContainerDiv = styled(MapContainer)`
 
 function Map() {
   const [lat, lng] = useGetUrlPosition();
-  const { selectedCityData } = useSelector((state) => state.cityData);
   const dispatch = useDispatch();
 
   const { data, isLoading, error } = useQuery({
@@ -39,11 +38,13 @@ function Map() {
   useEffect(
     function () {
       if (data) {
-        const { city, countryCode, longitude, latitude } = data;
+        console.log(data);
+        const { city, countryCode, longitude, latitude, countryName } = data;
         const finalSelectedCityData = {
           message: "",
           city,
           countryCode,
+          countryName,
           longitude,
           latitude,
         };
