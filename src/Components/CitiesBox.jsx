@@ -6,7 +6,7 @@ import { supabase } from "../Data/supabaseClient";
 import { useEffect } from "react";
 import { GetCities } from "../Data/useFetchAddedCities";
 
-const CitiesContainer = styled.div`
+export const CitiesContainer = styled.div`
   width: 100%;
   border: 4px solid black;
 `;
@@ -23,11 +23,15 @@ function CitiesBox() {
 
   return (
     <CitiesContainer>
-      <ul>
-        {cities?.map((each) => (
-          <CitiesEach city={each} key={each.id} />
-        ))}
-      </ul>
+      {!cities?.length ? (
+        <h1>Start adding</h1>
+      ) : (
+        <ul>
+          {cities?.map((each) => (
+            <CitiesEach city={each} key={each.id} />
+          ))}
+        </ul>
+      )}
     </CitiesContainer>
   );
 }

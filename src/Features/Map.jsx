@@ -17,6 +17,7 @@ import { getCityData } from "../Data/apiGetCityData";
 import { addSelectedCityData } from "./cityDataSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import { GetCities } from "../Data/useFetchAddedCities";
 
 const MapContainerDiv = styled(MapContainer)`
   background-color: inherit;
@@ -27,6 +28,7 @@ const MapContainerDiv = styled(MapContainer)`
 function Map() {
   const [lat, lng] = useGetUrlPosition();
   const dispatch = useDispatch();
+  const { cities } = GetCities();
 
   const { data, isLoading, error } = useQuery({
     queryKey: ["CityData", lat],
@@ -38,7 +40,6 @@ function Map() {
   useEffect(
     function () {
       if (data) {
-        console.log(data);
         const { city, countryCode, longitude, latitude, countryName } = data;
         const finalSelectedCityData = {
           message: "",
@@ -60,11 +61,12 @@ function Map() {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Marker position={[51.505, -0.09]}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
-      </Marker>
+      {/* <Marker position={[data.latitude, data.longitude]} /> */}
+      {cities?.map((each) => (
+        <Marker position={[each.latitude, each.longitude]} key={each.id}>
+          <Popup>{each.message ? each.message : "No Comment Added"}</Popup>
+        </Marker>
+      ))}
       <MapClick />
     </MapContainerDiv>
   );

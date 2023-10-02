@@ -15,6 +15,9 @@ import {
 } from "@tanstack/react-query";
 import { Provider } from "react-redux";
 import { store } from "./store";
+import { ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 const Homepage = lazy(() => import("./Pages/Homepage"));
 const Pricing = lazy(() => import("./Pages/Pricing"));
@@ -28,6 +31,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Provider store={store}>
+        <ToastContainer position="top-center" />
         <BrowserRouter>
           <Suspense fallback={<FullPageSpinner />}>
             <Routes>

@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { AddCity } from "../Data/useSubmitCityData";
+import { useNavigate } from "react-router";
 
 const StyledForm = styled.form`
   display: flex;
@@ -10,12 +11,13 @@ const StyledForm = styled.form`
 
 function Form() {
   const test = useSelector((state) => state.cityData.selectedCityData);
+  const navigate = useNavigate();
   const { addCityData } = AddCity();
 
   function handleSubmit(e) {
     e.preventDefault();
     addCityData(test);
-    console.log(test);
+    navigate("/app/cities");
   }
 
   return (

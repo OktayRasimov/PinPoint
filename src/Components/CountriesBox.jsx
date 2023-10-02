@@ -1,8 +1,11 @@
+import { CitiesContainer } from "./CitiesBox";
+import CountriesEach from "./CountriesEach";
+
 function CountriesBox() {
   return (
-    <div>
-      <h1>Countries box</h1>
-    </div>
+    <CitiesContainer>
+      <CountriesEach />
+    </CitiesContainer>
   );
 }
 

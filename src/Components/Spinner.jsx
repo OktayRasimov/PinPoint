@@ -1,5 +1,7 @@
+import { BarLoader } from "react-spinners";
+
 function Spinner() {
-  return <h1>LOADING...</h1>;
+  return <BarLoader loading="true" />;
 }
 
 export default Spinner;

@@ -1,5 +1,3 @@
-import { useGetUrlPosition } from "./useGetUrlPosition";
-
 // const [lat, lng] = useGetUrlPosition();
 
 // useEffect(
