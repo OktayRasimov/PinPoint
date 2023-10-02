@@ -14,8 +14,10 @@ function CitiesEach({ city }) {
 
   return (
     <li>
-      <p>{city.city} &times;</p>
-      <button onClick={() => deleteCity(city.id)}>test</button>
+      <p>{city.city}</p>
+      <p style={{ cursor: "pointer" }} onClick={() => deleteCity(city.id)}>
+        &times;
+      </p>
     </li>
   );
 }
