@@ -8,7 +8,35 @@ import { GetCities } from "../Data/useFetchAddedCities";
 
 export const CitiesContainer = styled.div`
   width: 100%;
-  border: 4px solid black;
+  height: max(50vh, 300px);
+  border-radius: 10px;
+  background-color: var(--color-grey-0);
+  padding: 1rem 1.6rem 1.6rem 1.6rem;
+  /* overflow: auto; */
+  /* &::-webkit-scrollbar {
+    display: none;
+  } */
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 85%;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  h2 {
+    text-align: center;
+    border-bottom: 1px solid black;
+    border-bottom: 100%;
+    padding-bottom: 0.6rem;
+    margin-bottom: 1.6rem;
+  }
+  h1 {
+    padding-top: 3rem;
+    text-align: center;
+  }
 `;
 
 function CitiesBox() {
@@ -23,8 +51,9 @@ function CitiesBox() {
 
   return (
     <CitiesContainer>
+      <h2>Cities Added</h2>
       {!cities?.length ? (
-        <h1>Start adding</h1>
+        <h1>No Cities added,Click to start adding 🔎</h1>
       ) : (
         <ul>
           {cities?.map((each) => (

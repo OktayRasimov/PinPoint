@@ -1,4 +1,15 @@
+import styled from "styled-components";
 import { useDeleteCity } from "../Data/useDeleteCity";
+import { useEffect } from "react";
+
+const StyledCitiesLi = styled.li`
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+
+  border-radius: 7px;
+  padding: 1rem;
+`;
 
 function CitiesEach({ city }) {
   const { deleteCity } = useDeleteCity();
@@ -13,12 +24,23 @@ function CitiesEach({ city }) {
   // }
 
   return (
-    <li>
-      <p>{city.city}</p>
+    <StyledCitiesLi>
+      <header>
+        <h3>City</h3>
+        <p>{city.city}</p>
+      </header>
+      <header>
+        <h3>Country</h3>
+        <p>{city.countryName}</p>
+      </header>
+      <header>
+        <h3>Date</h3>
+        <p>{city.date}</p>
+      </header>
       <p style={{ cursor: "pointer" }} onClick={() => deleteCity(city.id)}>
         &times;
       </p>
-    </li>
+    </StyledCitiesLi>
   );
 }
 

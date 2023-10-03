@@ -1,18 +1,26 @@
 import ReactCountryFlag from "react-country-flag";
+import styled from "styled-components";
 
-function CountriesEach() {
+const StyledFlagLi = styled.li`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+function CountriesEach({ code }) {
   return (
-    <div>
+    <StyledFlagLi>
       <ReactCountryFlag
-        countryCode="BG"
+        countryCode={code}
         svg
         style={{
-          width: "4em",
-          height: "4em",
+          width: "90%",
+          height: "auto",
         }}
-        title="BG"
+        title={code}
       />
-    </div>
+    </StyledFlagLi>
   );
 }
 
