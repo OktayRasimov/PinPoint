@@ -102,7 +102,7 @@ function MapClick() {
   const map = useMapEvent({
     click: (e) => {
       navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`);
-      map.setView(e.latlng);
+      // map.setView(e.latlng);
     },
   });
 }

@@ -85,7 +85,7 @@ function Form() {
             <StyledSelectedCity>{test.city}</StyledSelectedCity>
           </header>
           <header>
-            <h3>Comment about the trip:</h3>
+            <h3>Note about the trip:</h3>
             <textarea
               type="text"
               onChange={(e) => setMessage(e.target.value)}
