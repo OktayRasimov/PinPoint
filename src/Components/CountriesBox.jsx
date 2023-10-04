@@ -18,6 +18,10 @@ const CountriesContainer = styled.div`
     margin-bottom: 1.2rem;
     padding-bottom: 0.6rem;
   }
+  h1 {
+    text-align: center;
+    padding-top: 3rem;
+  }
 `;
 
 const StyledUl = styled.ul`
@@ -34,6 +38,7 @@ const StyledUl = styled.ul`
 `;
 const StyledNumVisited = styled.main`
   position: absolute;
+
   top: 1%;
   right: 2%;
 `;
@@ -60,14 +65,18 @@ function CountriesBox() {
   return (
     <CountriesContainer>
       <StyledNumVisited>
-        <p>Total:{unique.length}</p>
+        <p>Total:{unique?.length}</p>
       </StyledNumVisited>
       <h2>Countries Visited</h2>
-      <StyledUl>
-        {unique?.map((each) => (
-          <CountriesEach code={each.countryCode} key={each.id} />
-        ))}
-      </StyledUl>
+      {unique?.length ? (
+        <StyledUl>
+          {unique?.map((each) => (
+            <CountriesEach code={each.countryCode} key={each.id} />
+          ))}
+        </StyledUl>
+      ) : (
+        <h1>No Countries Visited ⛔</h1>
+      )}
     </CountriesContainer>
   );
 }

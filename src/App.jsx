@@ -18,6 +18,7 @@ import { store } from "./store";
 import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+import SelectedAddedCityBox from "./Components/SelectedAddedCityBox";
 
 const Homepage = lazy(() => import("./Pages/Homepage"));
 const Pricing = lazy(() => import("./Pages/Pricing"));
@@ -43,6 +44,7 @@ function App() {
                 <Route index element={<Navigate replace to="cities" />} />
                 <Route path="cities" element={<CitiesBox />} />
                 {/* <Route path="cities/id" element={<CitiesBox />} /> */}
+                <Route path="city" element={<SelectedAddedCityBox />} />
                 <Route path="form" element={<Form />} />
                 <Route path="countries" element={<CountriesBox />} />
               </Route>

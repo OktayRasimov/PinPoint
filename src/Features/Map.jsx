@@ -16,17 +16,23 @@ import { useQuery } from "@tanstack/react-query";
 import { getCityData } from "../Data/apiGetCityData";
 import { addSelectedCityData } from "./cityDataSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { GetCities } from "../Data/useFetchAddedCities";
 
 const MapContainerDiv = styled(MapContainer)`
   background-color: inherit;
   width: 70%;
   height: 100%;
+  &leaflet-popup-tip {
+    font-size: 3rem;
+  }
 `;
 
 function Map() {
+  const [mapPos, setMapPos] = useState([40, 0]);
+
   const [lat, lng] = useGetUrlPosition();
+
   const dispatch = useDispatch();
   const { cities } = GetCities();
 
@@ -55,8 +61,18 @@ function Map() {
     [data, dispatch]
   );
 
+  useEffect(
+    function () {
+      if (lat && lng) {
+        setMapPos([lat, lng]);
+        console.log([lat, lng]);
+      }
+    },
+    [lat, lng]
+  );
+
   return (
-    <MapContainerDiv center={[42.14, 24.78]} zoom={9} scrollWheelZoom={true}>
+    <MapContainerDiv center={mapPos} zoom={9} scrollWheelZoom={true}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -67,9 +83,17 @@ function Map() {
           <Popup>{each.message ? each.message : "No Comment Added"}</Popup>
         </Marker>
       ))}
+      <SetCenter position={mapPos} />
       <MapClick />
     </MapContainerDiv>
   );
+}
+
+function SetCenter({ position }) {
+  const map = useMap();
+
+  map.flyTo(position);
+  // return null;
 }
 
 function MapClick() {
