@@ -6,6 +6,7 @@ const GlobalStyle = createGlobalStyle`
   --color-grey-0:#363b40;
   --color-grey-100:#2a2d30;
   --color-grey-200:#323232;
+  --color-grey-300:#c0c0c04e;
   //main light color
   --color-green-100:#39F088;
   //white

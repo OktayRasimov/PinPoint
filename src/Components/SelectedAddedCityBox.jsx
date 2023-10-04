@@ -13,8 +13,8 @@ const CitySelectedInfoBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  aside {
-    margin-top: 4rem;
+  h4 {
+    color: var(--color-grey-300);
   }
 `;
 
@@ -40,14 +40,14 @@ function SelectedAddedCityBox() {
   return (
     <CitySelectedInfoBox>
       <header>
-        <h4>City Name:</h4>
+        <h4>City name:</h4>
         <h1>
           {addedSelectedCityData.city}&nbsp;&nbsp;&nbsp;
           <span>{addedSelectedCityData.countryCode}</span>
         </h1>
       </header>
       <header>
-        <h4>Note About Trip</h4>
+        <h4>Note about the trip</h4>
         <h1>{addedSelectedCityData.message}</h1>
       </header>
       <header>
