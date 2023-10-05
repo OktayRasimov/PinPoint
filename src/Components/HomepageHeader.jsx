@@ -7,6 +7,7 @@ const HomePageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+
   gap: 5rem;
 `;
 

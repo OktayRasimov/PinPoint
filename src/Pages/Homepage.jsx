@@ -5,7 +5,9 @@ import HomepageHeader from "../Components/HomepageHeader";
 
 const MainHomePageContainer = styled.main`
   height: calc(100vh - 5rem);
-
+  display: flex;
+  flex-direction: column;
+  gap: 13rem;
   margin: 2.5rem;
   background-image: linear-gradient(
       rgba(36, 42, 46, 0.5),

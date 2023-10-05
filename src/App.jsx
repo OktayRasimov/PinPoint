@@ -40,6 +40,7 @@ function App() {
               <Route path="pricing" element={<Pricing />} />
               <Route path="product" element={<Product />} />
               <Route path="login" element={<Login />} />
+
               <Route path="app" element={<AppLayout />}>
                 <Route index element={<Navigate replace to="cities" />} />
                 <Route path="cities" element={<CitiesBox />} />
@@ -48,6 +49,7 @@ function App() {
                 <Route path="form" element={<Form />} />
                 <Route path="countries" element={<CountriesBox />} />
               </Route>
+
               <Route path="*" element={<PageNotFound />} />
             </Routes>
           </Suspense>
