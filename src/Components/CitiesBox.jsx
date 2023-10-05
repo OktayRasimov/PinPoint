@@ -5,6 +5,7 @@ import FullPageSpinner from "./FullPageSpinner";
 import { supabase } from "../Data/supabaseClient";
 import { useEffect } from "react";
 import { GetCities } from "../Data/useFetchAddedCities";
+import { AddCity } from "../Data/useSubmitCityData";
 
 export const CitiesContainer = styled.div`
   width: 100%;

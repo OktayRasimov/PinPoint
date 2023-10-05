@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { AddCity } from "../Data/useSubmitCityData";
 import { useNavigate } from "react-router";
 import NotValidCity from "./NotValidCity";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const StyledForm = styled.form`
   background-color: var(--color-grey-0);
@@ -63,7 +63,7 @@ function Form() {
 
   const test = useSelector((state) => state.cityData.selectedCityData);
   const navigate = useNavigate();
-  const { addCityData } = AddCity();
+  const { addCityData, isAddingCity } = AddCity();
 
   // console.log(test);
 
