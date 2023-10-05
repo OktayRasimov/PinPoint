@@ -79,6 +79,7 @@ function LoginForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+          <h5>Demo&nbsp;:&nbsp;popov@abv.bg</h5>
         </header>
         <header>
           <p>Password</p>
@@ -87,6 +88,7 @@ function LoginForm() {
             value={pass}
             onChange={(e) => setPass(e.target.value)}
           />
+          <h5>Demo&nbsp;:&nbsp;samolevski123</h5>
         </header>
         <button type="submit">Sign in</button>
       </StyledLoginBox>

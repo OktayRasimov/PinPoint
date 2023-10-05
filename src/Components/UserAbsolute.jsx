@@ -5,13 +5,24 @@ import { useDispatch, useSelector } from "react-redux";
 import { addAuthUser } from "../Features/loginSlice";
 
 const StyledUserAbsolute = styled.div`
-  width: 200px;
-  height: 100px;
+  width: fit-content;
+  font-size: 1.4rem;
   z-index: 1000;
-  background-color: red;
   position: absolute;
   top: 2%;
   right: 2%;
+`;
+
+const StyledLogoutButton = styled.button`
+  width: 100px;
+  height: 35px;
+  /* background-color: var(--color-grey-0); */
+  border-radius: 3px;
+  border: none;
+  transition: all 0.4s;
+  &:hover {
+    transform: scale(1.08);
+  }
 `;
 
 function UserAbsolute() {
@@ -36,7 +47,7 @@ function UserAbsolute() {
 
   return (
     <StyledUserAbsolute>
-      <button onClick={handleLogout}>LOGOUT</button>
+      <StyledLogoutButton onClick={handleLogout}>LOGOUT</StyledLogoutButton>
     </StyledUserAbsolute>
   );
 }
