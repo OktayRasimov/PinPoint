@@ -20,6 +20,8 @@ import { useEffect, useState } from "react";
 import { GetCities } from "../Data/useFetchAddedCities";
 import UserAbsolute from "../Components/UserAbsolute";
 import { toast } from "react-toastify";
+import { Icon, marker } from "leaflet";
+import "leaflet/dist/images/marker-shadow.png";
 
 const MapContainerDiv = styled(MapContainer)`
   background-color: inherit;
