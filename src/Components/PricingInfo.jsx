@@ -20,10 +20,11 @@ function PricingInfo() {
       </h2>
 
       <aside>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus
-        laboriosam, error aut, magnam voluptatum nostrum nihil reiciendis fuga
-        recusandae enim impedit, laborum a aperiam libero eligendi optio
-        provident ratione nemo!
+        PinPoint is a versatile app designed to help you streamline your
+        location-based needs. Whether you're planning a road trip, organizing a
+        group meet-up, or just want to stay informed about events in your area,
+        PinPoint has you covered. With a user-friendly interface and a range of
+        features, it's the perfect tool for individuals and groups alike.
       </aside>
     </PricingInfoContainer>
   );

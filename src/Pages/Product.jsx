@@ -1,11 +1,12 @@
 import PageNav from "../Components/PageNav";
+import ProductComponent from "../Components/ProductComponent";
 import { MainHomePageContainer } from "./Pricing";
 
 function Product() {
   return (
     <MainHomePageContainer>
       <PageNav />
-      <h2>info stuff</h2>
+      <ProductComponent />
     </MainHomePageContainer>
   );
 }

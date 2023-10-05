@@ -19,7 +19,7 @@ const StyledLoginBox = styled.form`
   border-radius: 5px;
   padding: 2rem;
   width: min(350px, 80%);
-  height: 240px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

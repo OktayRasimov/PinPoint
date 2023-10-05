@@ -7,24 +7,23 @@ const HomePageContainer = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-
   gap: 5rem;
+  p {
+    font-size: 2.6rem;
+  }
 `;
 
 function HomepageHeader() {
   return (
     <HomePageContainer>
-      <h1>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima
-        excepturi at nam veniam necessitatibus, consectetur incidunt aliquam
-        ipsum iusto consequatur assumenda nisi fuga fugiat, amet sapiente
-        tenetur eos. Accusamus, corrupti.
-      </h1>
+      <h1>Welcome to PinPoint: Your Location Companion</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-        aspernatur, explicabo sed, molestiae similique reiciendis commodi
-        consequatur vitae totam laudantium voluptates, consectetur saepe ea
-        repellendus nobis. Aut vero fugit rerum.
+        PinPoint is your go-to app for seamless location-based experiences.
+        Whether you're exploring new places, connecting with friends, or
+        discovering local events, we've got you covered. With real-time location
+        sharing, event recommendations, and group planning tools, PinPoint makes
+        navigating the world a breeze. Join us today and never lose your way
+        again!
       </p>
       <LinkButton />
     </HomePageContainer>
