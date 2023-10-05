@@ -23,6 +23,9 @@ const StyledLoginBox = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  h5 {
+    color: var(--color-white-100);
+  }
   p {
     color: #fff;
   }
@@ -62,12 +65,7 @@ function LoginForm() {
   useEffect(
     function () {
       if (authUser) {
-        console.log(`FIRST`, authUser);
         navigate("/app", { replace: true });
-      }
-      if (!authUser) {
-        console.log(`SECOND`, authUser);
-        // navigate("/app", { replace: true });
       }
     },
     [authUser, navigate]
