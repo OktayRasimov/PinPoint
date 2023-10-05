@@ -3,6 +3,7 @@ import { supabase } from "../Data/supabaseClient";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addAuthUser } from "../Features/loginSlice";
+import { toast } from "react-toastify";
 
 const StyledUserAbsolute = styled.div`
   width: fit-content;
@@ -37,13 +38,6 @@ function UserAbsolute() {
     }
     logout();
   }
-
-  useEffect(
-    function () {
-      console.log(authUser);
-    },
-    [authUser]
-  );
 
   return (
     <StyledUserAbsolute>

@@ -5,6 +5,7 @@ import { supabase } from "../Data/supabaseClient";
 import { useDispatch, useSelector } from "react-redux";
 import { addAuthUser } from "../Features/loginSlice";
 import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 const StyledLoginForm = styled.main`
   display: flex;
@@ -49,8 +50,11 @@ function LoginForm() {
         email: email,
         password: pass,
       });
-      if (data) dispatch(addAuthUser(data.user));
-      //   if (error) alert(`something went wrong with login`);
+      if (data.user) {
+        dispatch(addAuthUser(data.user));
+        toast.success(`Login succesful`);
+      }
+      if (error) toast.error(`Wrong credentials,check your email or pass`);
     }
     login();
   }
@@ -66,7 +70,7 @@ function LoginForm() {
         // navigate("/app", { replace: true });
       }
     },
-    [authUser]
+    [authUser, navigate]
   );
 
   return (

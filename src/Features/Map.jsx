@@ -19,6 +19,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { GetCities } from "../Data/useFetchAddedCities";
 import UserAbsolute from "../Components/UserAbsolute";
+import { toast } from "react-toastify";
 
 const MapContainerDiv = styled(MapContainer)`
   background-color: inherit;
