@@ -19,6 +19,7 @@ import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 import SelectedAddedCityBox from "./Components/SelectedAddedCityBox";
+import ProtectedRoute from "./Components/ProtectedRoute";
 
 const Homepage = lazy(() => import("./Pages/Homepage"));
 const Pricing = lazy(() => import("./Pages/Pricing"));
@@ -41,7 +42,14 @@ function App() {
               <Route path="product" element={<Product />} />
               <Route path="login" element={<Login />} />
 
-              <Route path="app" element={<AppLayout />}>
+              <Route
+                path="app"
+                element={
+                  <ProtectedRoute>
+                    <AppLayout />
+                  </ProtectedRoute>
+                }
+              >
                 <Route index element={<Navigate replace to="cities" />} />
                 <Route path="cities" element={<CitiesBox />} />
                 {/* <Route path="cities/id" element={<CitiesBox />} /> */}

@@ -1,6 +1,10 @@
-import { useState } from "react";
 import styled from "styled-components";
+
+import { useEffect, useState } from "react";
 import { supabase } from "../Data/supabaseClient";
+import { useDispatch, useSelector } from "react-redux";
+import { addAuthUser } from "../Features/loginSlice";
+import { useNavigate } from "react-router";
 
 const StyledLoginForm = styled.main`
   display: flex;
@@ -33,6 +37,11 @@ function LoginForm() {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
 
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const { authUser } = useSelector((state) => state.login);
+
   function handleLogin(e) {
     e.preventDefault();
     async function login() {
@@ -40,10 +49,25 @@ function LoginForm() {
         email: email,
         password: pass,
       });
-      console.log(data, error);
+      if (data) dispatch(addAuthUser(data.user));
+      //   if (error) alert(`something went wrong with login`);
     }
     login();
   }
+
+  useEffect(
+    function () {
+      if (authUser) {
+        console.log(`FIRST`, authUser);
+        navigate("/app", { replace: true });
+      }
+      if (!authUser) {
+        console.log(`SECOND`, authUser);
+        // navigate("/app", { replace: true });
+      }
+    },
+    [authUser]
+  );
 
   return (
     <StyledLoginForm onSubmit={handleLogin}>

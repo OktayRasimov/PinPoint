@@ -18,11 +18,13 @@ import { addSelectedCityData } from "./cityDataSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { GetCities } from "../Data/useFetchAddedCities";
+import UserAbsolute from "../Components/UserAbsolute";
 
 const MapContainerDiv = styled(MapContainer)`
   background-color: inherit;
   width: 70%;
   height: 100%;
+  position: relative;
   &leaflet-popup-tip {
     font-size: 3rem;
   }
@@ -85,6 +87,7 @@ function Map() {
       ))}
       <SetCenter position={mapPos} />
       <MapClick />
+      <UserAbsolute />
     </MapContainerDiv>
   );
 }
