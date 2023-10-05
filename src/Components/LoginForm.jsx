@@ -48,6 +48,7 @@ function LoginForm() {
 
   function handleLogin(e) {
     e.preventDefault();
+
     async function login() {
       let { data, error } = await supabase.auth.signInWithPassword({
         email: email,
@@ -55,17 +56,20 @@ function LoginForm() {
       });
       if (data.user) {
         dispatch(addAuthUser(data.user));
+        console.log(data);
         toast.success(`Login succesful`);
       }
       if (error) toast.error(`Wrong credentials,check your email or pass`);
     }
+    console.log(authUser);
     login();
   }
 
   useEffect(
     function () {
-      if (authUser) {
+      if (authUser?.aud) {
         navigate("/app", { replace: true });
+        console.log(authUser);
       }
     },
     [authUser, navigate]

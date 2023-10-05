@@ -19,8 +19,8 @@ function HomepageHeader() {
       <h1>Welcome to PinPoint: Your Location Companion</h1>
       <p>
         PinPoint is your go-to app for seamless location-based experiences.
-        Whether you're exploring new places, connecting with friends, or
-        discovering local events, we've got you covered. With real-time location
+        Whether you`re exploring new places, connecting with friends, or
+        discovering local events, we`ve got you covered. With real-time location
         sharing, event recommendations, and group planning tools, PinPoint makes
         navigating the world a breeze. Join us today and never lose your way
         again!
