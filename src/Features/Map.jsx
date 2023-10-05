@@ -19,9 +19,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { GetCities } from "../Data/useFetchAddedCities";
 import UserAbsolute from "../Components/UserAbsolute";
-import { toast } from "react-toastify";
-import { Icon, marker } from "leaflet";
-import "leaflet/dist/images/marker-shadow.png";
+
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+
+import icon from "leaflet/dist/images/marker-icon.png";
+import iconShadow from "leaflet/dist/images/marker-shadow.png";
 
 const MapContainerDiv = styled(MapContainer)`
   background-color: inherit;
@@ -34,6 +37,13 @@ const MapContainerDiv = styled(MapContainer)`
 `;
 
 function Map() {
+  let DefaultIcon = L.icon({
+    iconUrl: icon,
+    shadowUrl: iconShadow,
+  });
+
+  L.Marker.prototype.options.icon = DefaultIcon;
+
   const [mapPos, setMapPos] = useState([40, 0]);
 
   const [lat, lng] = useGetUrlPosition();
