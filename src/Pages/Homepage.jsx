@@ -4,7 +4,7 @@ import PageNav from "../Components/PageNav";
 import HomepageHeader from "../Components/HomepageHeader";
 
 const MainHomePageContainer = styled.main`
-  height: calc(100vh - 5rem);
+  min-height: calc(100vh - 5rem);
   display: flex;
   flex-direction: column;
   gap: 13rem;

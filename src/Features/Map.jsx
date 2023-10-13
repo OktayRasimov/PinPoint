@@ -29,7 +29,7 @@ import iconShadow from "leaflet/dist/images/marker-shadow.png";
 const MapContainerDiv = styled(MapContainer)`
   background-color: inherit;
   width: 70%;
-  height: 100%;
+  height: inherit;
   position: relative;
   &leaflet-popup-tip {
     font-size: 3rem;
