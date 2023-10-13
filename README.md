@@ -10,7 +10,7 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://github.com/OktayRasimov/pin-point/main/src/Images/pinpoint1.png/?raw=true" alt="project-screenshot" width="400" height="400/">
+<img src="https://github.com/OktayRasimov/pin-point/blob/main/src/Images/pinpoint1.png/?raw=true" alt="project-screenshot" width="400" height="400/">
 
 <h2>💻 Built with</h2>
 
