@@ -59,3 +59,7 @@ npm run dev
 ```
 
 <p>7. Then you can alt+leftClick on the given link</p>
+
+<h2>⚙ Currently Working on</h2>
+
+- Making the App Responsive for all kinds of Devices
