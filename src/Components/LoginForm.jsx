@@ -11,7 +11,9 @@ const StyledLoginForm = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 13em;
+  /* padding-top: 13em; */
+  padding-top: 9rem;
+  min-height: 50vh;
 `;
 
 const StyledLoginBox = styled.form`

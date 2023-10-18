@@ -2,14 +2,30 @@ import styled from "styled-components";
 import LinkButton from "./LinkButton";
 
 const HomePageContainer = styled.div`
-  padding-bottom: 10%;
+  /* padding-bottom: 10%; */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 5rem;
+  gap: 4rem;
   p {
     font-size: 2.6rem;
+  }
+  @media (900px<=width<=1300px) {
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.8rem;
+    }
+  }
+  @media (width<=900px) {
+    h1 {
+      font-size: 1.6rem;
+    }
+    p {
+      font-size: 1.6rem;
+    }
   }
 `;
 
