@@ -7,7 +7,7 @@ const MainHomePageContainer = styled.main`
   min-height: calc(100vh - 5rem);
   display: flex;
   flex-direction: column;
-  gap: 13rem;
+  /* gap: 13rem; */
   margin: 2.5rem;
 
   background-image: linear-gradient(

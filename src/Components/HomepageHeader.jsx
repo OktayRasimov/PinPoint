@@ -5,9 +5,12 @@ const HomePageContainer = styled.div`
   /* padding-bottom: 10%; */
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  min-height: 70vh;
   align-items: center;
   text-align: center;
   gap: 4rem;
+  /* margin-top: 10rem; */
   p {
     font-size: 2.6rem;
   }
