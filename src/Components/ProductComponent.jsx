@@ -4,6 +4,12 @@ import productimg from "../Images/productimg.jpg";
 
 const ProductImg = styled.img`
   width: max(500px, 20%);
+  @media (width<=1155px) {
+    width: max(350px, 20%);
+  }
+  @media (width<=855px) {
+    width: max(250px, 20%);
+  }
 `;
 
 const ProductContainer = styled.div`
@@ -11,7 +17,7 @@ const ProductContainer = styled.div`
   gap: 2rem;
   justify-content: center;
   align-items: center;
-  padding-top: 9rem;
+  min-height: 70vh;
 `;
 
 function ProductComponent() {

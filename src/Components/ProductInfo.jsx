@@ -10,6 +10,19 @@ const ProductInfoContainer = styled.main`
   aside {
     font-size: 1.8rem;
   }
+  @media (width<=1100px) {
+    h2 {
+      font-size: 3rem;
+    }
+    aside {
+      font-size: 1.4rem;
+    }
+  }
+  @media (width<=900px) {
+    h2 {
+      font-size: 2.4rem;
+    }
+  }
 `;
 
 function ProductInfo() {
