@@ -10,6 +10,14 @@ const PricingInfoContainer = styled.main`
   aside {
     font-size: 1.8rem;
   }
+  @media (width<=1100px) {
+    h2 {
+      font-size: 2.4rem;
+    }
+    aside {
+      font-size: 1.6rem;
+    }
+  }
 `;
 
 function PricingInfo() {

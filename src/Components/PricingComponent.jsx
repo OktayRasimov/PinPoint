@@ -4,6 +4,9 @@ import styled from "styled-components";
 
 export const PricingImg = styled.img`
   width: max(500px, 20%);
+  @media (width<=1100px) {
+    width: max(300px, 20%);
+  }
 `;
 
 export const PricingContainer = styled.div`
@@ -11,7 +14,7 @@ export const PricingContainer = styled.div`
   gap: 2rem;
   justify-content: center;
   align-items: center;
-  padding-top: 9rem;
+  min-height: 70vh;
 `;
 
 function PricingComponent() {
