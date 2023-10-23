@@ -9,7 +9,6 @@ const MainHomePageContainer = styled.main`
   flex-direction: column;
   /* gap: 13rem; */
   margin: 2.5rem;
-
   background-image: linear-gradient(
       rgba(36, 42, 46, 0.5),
       rgba(36, 42, 46, 0.5)

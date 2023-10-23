@@ -2,6 +2,8 @@ import Logo from "./Logo";
 import styled from "styled-components";
 import { HiMenu } from "react-icons/hi";
 import PageNavUlComponent from "./PageNavUl";
+import { useState } from "react";
+import MobilePageNavShow from "./MobilePageNavShow";
 
 const PageNavContainer = styled.nav`
   display: flex;
@@ -9,25 +11,29 @@ const PageNavContainer = styled.nav`
   align-items: center;
 `;
 
-const PageNavMobile = styled.div`
+const PageNavMobileButton = styled.div`
   font-size: 4rem;
   color: white;
   cursor: pointer;
+  z-index: 9999;
   @media (width>750px) {
     display: none;
   }
 `;
 
 function PageNav() {
+  const [showPageNav, setShowPageNav] = useState(false);
+
   return (
     <PageNavContainer>
       <Logo />
 
-      <PageNavUlComponent />
+      <PageNavUlComponent showPageNav={showPageNav} />
 
-      <PageNavMobile>
-        <HiMenu />
-      </PageNavMobile>
+      <PageNavMobileButton>
+        <HiMenu onClick={() => setShowPageNav((prev) => !prev)} />
+      </PageNavMobileButton>
+      <MobilePageNavShow display={showPageNav} />
     </PageNavContainer>
   );
 }
