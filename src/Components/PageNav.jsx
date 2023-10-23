@@ -1,6 +1,7 @@
-import { NavLink } from "react-router-dom";
 import Logo from "./Logo";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
+import { HiMenu } from "react-icons/hi";
 
 const PageNavContainer = styled.nav`
   display: flex;
@@ -15,6 +16,19 @@ const PageNavUl = styled.ul`
 
   li {
     color: var(--color-white-100);
+  }
+
+  @media (width<=750px) {
+    display: none;
+  }
+`;
+
+const PageNavMobile = styled.div`
+  font-size: 4rem;
+  color: white;
+  cursor: pointer;
+  @media (width>750px) {
+    display: none;
   }
 `;
 
@@ -45,6 +59,9 @@ function PageNav() {
           <PageNavStyledLink to="/login">Login</PageNavStyledLink>
         </li>
       </PageNavUl>
+      <PageNavMobile>
+        <HiMenu />
+      </PageNavMobile>
     </PageNavContainer>
   );
 }
