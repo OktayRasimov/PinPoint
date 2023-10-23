@@ -5,6 +5,7 @@ import PageNavUlMobileComponent from "./PageNavUlMobile";
 const StyledMobilePageNavShow = styled.div`
   min-height: calc(100vh - 5rem);
   display: ${(props) => (props.display ? "inline-block" : "none")};
+
   width: 27rem;
   position: absolute;
 
@@ -13,8 +14,11 @@ const StyledMobilePageNavShow = styled.div`
   right: 0;
 
   background-color: var(--color-grey-200);
-  @media (width>750px) {
+  @media (width>800px) {
     display: none;
+  }
+  @media (width<450px) {
+    margin: 1rem;
   }
 `;
 

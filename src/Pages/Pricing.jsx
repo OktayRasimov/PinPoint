@@ -7,6 +7,11 @@ export const MainHomePageContainer = styled.main`
   background: var(--color-grey-100);
   margin: 2.5rem;
   padding: 2.5rem 5rem;
+  @media (width<=450px) {
+    min-height: calc(100vh - 2rem);
+    margin: 1rem;
+    gap: 1rem;
+  }
 `;
 
 function Pricing() {

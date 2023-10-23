@@ -14,6 +14,7 @@ const LogoImg = styled.img`
 const LogoContainer = styled.div`
   display: flex;
   gap: 1.4rem;
+  padding-right: 1.4rem;
 
   h2 {
     font-size: 3rem;

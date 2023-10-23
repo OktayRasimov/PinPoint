@@ -13,6 +13,11 @@ const StyledLink = styled(Link)`
   width: 23rem;
   height: 60px;
   font-size: 2.6rem;
+  @media (width<=400px) {
+    width: 16rem;
+    height: 40px;
+    font-size: medium;
+  }
 `;
 
 function LinkButton() {

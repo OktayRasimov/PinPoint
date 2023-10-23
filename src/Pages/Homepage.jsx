@@ -21,6 +21,11 @@ const MainHomePageContainer = styled.main`
   /* display: flex;
   flex-direction: column;
   justify-content: space-between; */
+  @media (width<=450px) {
+    min-height: calc(100vh - 2rem);
+    margin: 1rem;
+    gap: 1rem;
+  }
 `;
 
 function Homepage() {

@@ -10,7 +10,7 @@ const PageNavUl = styled.ul`
     color: var(--color-white-100);
   }
 
-  @media (width<=750px) {
+  @media (width<=800px) {
     display: none;
   }
 `;

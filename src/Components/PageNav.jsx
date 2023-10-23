@@ -14,9 +14,10 @@ const PageNavContainer = styled.nav`
 const PageNavMobileButton = styled.div`
   font-size: 4rem;
   color: white;
+  transform: translateY(5px);
   cursor: pointer;
   z-index: 9999;
-  @media (width>750px) {
+  @media (width>800px) {
     display: none;
   }
 `;

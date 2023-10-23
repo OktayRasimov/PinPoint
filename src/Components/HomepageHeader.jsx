@@ -30,6 +30,14 @@ const HomePageContainer = styled.div`
       font-size: 1.6rem;
     }
   }
+  @media (width<=400px) {
+    h1 {
+      font-size: 1.3rem;
+    }
+    p {
+      font-size: 1.3rem;
+    }
+  }
 `;
 
 function HomepageHeader() {
