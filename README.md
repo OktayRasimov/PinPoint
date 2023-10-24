@@ -28,6 +28,10 @@ Back End:
 - Supabase
 - User Auth
 
+<h2>👩‍💻 Features:</h2>
+
+- Fully Responsive/Mobile Responsive ready
+
 <h2>🛠️ Installation Steps:</h2>
 
 <p>1. Open a file thats not an active repo</p>
@@ -59,7 +63,3 @@ npm run dev
 ```
 
 <p>7. Then you can alt+leftClick on the given link</p>
-
-<h2>⚙ Currently Working on</h2>
-
-- Making the App Responsive for all kinds of Devices
