@@ -5,6 +5,7 @@ import HomepageHeader from "../Components/HomepageHeader";
 
 const MainHomePageContainer = styled.main`
   min-height: calc(100vh - 5rem);
+  max-height: calc(100vh - 5rem);
   display: flex;
   flex-direction: column;
   /* gap: 13rem; */

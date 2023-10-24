@@ -7,6 +7,9 @@ export const PricingImg = styled.img`
   @media (width<=1100px) {
     width: max(300px, 20%);
   }
+  @media (width<=700px) {
+    display: none;
+  }
 `;
 
 export const PricingContainer = styled.div`

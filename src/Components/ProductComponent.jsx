@@ -10,6 +10,9 @@ const ProductImg = styled.img`
   @media (width<=855px) {
     width: max(250px, 20%);
   }
+  @media (width<=700px) {
+    display: none;
+  }
 `;
 
 const ProductContainer = styled.div`
