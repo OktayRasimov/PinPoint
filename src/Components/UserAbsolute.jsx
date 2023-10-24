@@ -8,10 +8,13 @@ import { toast } from "react-toastify";
 const StyledUserAbsolute = styled.div`
   width: fit-content;
   font-size: 1.4rem;
-  z-index: 1000;
+  z-index: 9999;
   position: absolute;
-  top: 2%;
-  right: 2%;
+  top: 5%;
+  right: 5%;
+  @media (width<=450px) {
+    top: 2.4%;
+  }
 `;
 
 const StyledLogoutButton = styled.button`

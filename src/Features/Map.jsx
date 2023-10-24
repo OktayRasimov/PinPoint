@@ -100,7 +100,7 @@ function Map() {
       ))}
       <SetCenter position={mapPos} />
       <MapClick />
-      <UserAbsolute />
+      {/* <UserAbsolute /> */}
     </MapContainerDiv>
   );
 }

@@ -6,12 +6,13 @@ import Footer from "./Footer";
 
 const SidebarContainer = styled.div`
   background-color: inherit;
+  min-width: 350px;
   width: 30%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 2.5rem;
+  padding: 1rem;
 `;
 
 const MainSideBarContent = styled.main`

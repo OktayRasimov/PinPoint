@@ -15,10 +15,8 @@ const StyledForm = styled.form`
   /* border: 0.5px solid #7b8185; */
   border-radius: 10px;
   padding: 1rem 2rem 2rem 2rem;
-  width: 85%;
-  height: max(45vh, 300px);
-  margin-bottom: 2rem;
-
+  width: 100%;
+  margin-bottom: 1rem;
   box-shadow: 1px 3px 22px 0px rgba(0, 0, 0, 0.75);
   -webkit-box-shadow: 1px 3px 22px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 1px 3px 22px 0px rgba(0, 0, 0, 0.75);

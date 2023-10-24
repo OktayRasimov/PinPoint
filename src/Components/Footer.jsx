@@ -1,5 +1,5 @@
 function Footer() {
-  return <div>copyright.inc pintest</div>;
+  return <div>copyright.inc PinPoint</div>;
 }
 
 export default Footer;
