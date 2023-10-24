@@ -44,7 +44,7 @@ function Map() {
 
   L.Marker.prototype.options.icon = DefaultIcon;
 
-  const [mapPos, setMapPos] = useState([40, 0]);
+  const [mapPos, setMapPos] = useState([42, 24]);
 
   const [lat, lng] = useGetUrlPosition();
 
