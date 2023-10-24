@@ -18,17 +18,17 @@ import { addSelectedCityData } from "./cityDataSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { GetCities } from "../Data/useFetchAddedCities";
-import UserAbsolute from "../Components/UserAbsolute";
 
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
+import { checkShow } from "./appLayoutSlice";
 
 const MapContainerDiv = styled(MapContainer)`
   background-color: inherit;
-  width: 70%;
+  width: ${(props) => (!props.isOpen ? "100%" : "70%")};
   height: inherit;
   position: relative;
   &leaflet-popup-tip {
@@ -76,18 +76,21 @@ function Map() {
     [data, dispatch]
   );
 
+  const { isShow } = useSelector((state) => state.appLayout);
+
   useEffect(
     function () {
       if (lat && lng) {
         setMapPos([lat, lng]);
         console.log([lat, lng]);
+        dispatch(checkShow(!isShow));
       }
     },
-    [lat, lng]
+    [lat, lng, dispatch, isShow]
   );
 
   return (
-    <MapContainerDiv center={mapPos} zoom={9} scrollWheelZoom={true}>
+    <MapContainerDiv center={mapPos} zoom={9} scrollWheelZoom={true} isOpen>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

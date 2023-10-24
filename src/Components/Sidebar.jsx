@@ -13,7 +13,7 @@ const SidebarContainer = styled.div`
   background-color: inherit;
   min-width: 350px;
   width: 30%;
-  display: flex;
+  display: ${(props) => (props.$isOpen ? "flex" : "none")};
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -37,7 +37,11 @@ const StyledSideBarArrow = styled.div`
   right: 3%;
   font-size: 4rem;
   position: absolute;
+  display: none;
   color: var(--color-green-100);
+  @media (width<=700px) {
+    display: inline-block;
+  }
 `;
 
 function Sidebar() {
@@ -45,19 +49,12 @@ function Sidebar() {
 
   const { isOpen } = useSelector((state) => state.appLayout);
 
-  useEffect(
-    function () {
-      console.log(isOpen);
-    },
-    [isOpen]
-  );
-
   function handleSideBarShow() {
     dispatch(checkShow(!isOpen));
   }
 
   return (
-    <SidebarContainer>
+    <SidebarContainer $isOpen={isOpen}>
       <StyledSideBarArrow onClick={handleSideBarShow}>
         <HiArrowNarrowLeft />
       </StyledSideBarArrow>
