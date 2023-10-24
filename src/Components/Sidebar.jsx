@@ -19,6 +19,10 @@ const SidebarContainer = styled.div`
   align-items: center;
   padding: 1rem;
   position: relative;
+  @media (width<=550px) {
+    width: 100%;
+    min-width: 100%;
+  }
 `;
 
 const MainSideBarContent = styled.main`

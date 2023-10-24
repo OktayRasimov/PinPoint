@@ -28,7 +28,7 @@ import { checkShow } from "./appLayoutSlice";
 
 const MapContainerDiv = styled(MapContainer)`
   background-color: inherit;
-  width: ${(props) => (!props.isOpen ? "100%" : "70%")};
+  width: ${(props) => (!props.$isShow ? "100%" : "70%")};
   height: inherit;
   position: relative;
   &leaflet-popup-tip {
@@ -90,7 +90,12 @@ function Map() {
   );
 
   return (
-    <MapContainerDiv center={mapPos} zoom={9} scrollWheelZoom={true} isOpen>
+    <MapContainerDiv
+      center={mapPos}
+      zoom={9}
+      scrollWheelZoom={true}
+      $isShow={isShow}
+    >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
