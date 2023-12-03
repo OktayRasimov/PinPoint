@@ -4,6 +4,10 @@
 
 <p id="description">PinPoint: Your ultimate travel companion for saving and recalling the places you've been. Powered by the Leaflet library, this app makes it easy to mark and remember your favorite locations. Whether you're a globetrotter or simply want to keep track of your favorite local spots, PinPoint helps you pin and remember with ease.</p>
 
+<h2>⛔ ATTENTION</h2>
+
+<p>The app is hosted on SUPABASE,if some features arent working as expected it might be because the hosting site(SUPABASE) is experiencing problems</p>
+
 <h2>🚀 Demo</h2>
 
 [https://pin-point-beta.vercel.app/](https://pin-point-beta.vercel.app/)
